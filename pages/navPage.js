@@ -7,8 +7,8 @@ const navPage = (user) => {
   clearLoginBtn();
   navBar();
   logoutButton();
-  const domString = ` <h1>Welcome ${user.displayName}</h1> <button>View Orders</button><button>Create an Order</button>
-  <button>View Revenue</button>`;
+  const domString = ` <h1>Welcome ${user.displayName}</h1> <div class="buttonHolder"><div class="homescreen-btns"> <button>View Orders</button><button>Create an Order</button>
+  <button>View Revenue</button></div></div>`;
 
   renderToDOM('#store', domString);
 };
