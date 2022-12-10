@@ -1,9 +1,28 @@
 import clearDom from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDOM';
 
-const viewOrdersPage = () => {
+const viewOrdersPage = (array) => {
   clearDom();
-  const domstring = 'This is the viewOrdersPage';
-  renderToDOM('#store', domstring);
+  let domString = '';
+  array.forEach((item) => {
+    domString += `<div class="card">
+    
+          <div class="card-body" style="height: 300px;">
+            <h5 class="card-title">Orders: ${item.order_name}</h5>
+            <p>____________________________</p>
+           <div class="definition"> <p>Phone Number: ${item.phone_number}</p></div>
+            <p>email: ${item.email}</p>
+          <p>${item.date}</p>
+          <p>${item.is_phone === true ? 'Phone Order' : 'In Person'}</p>
+        
+            
+            <i id="edit-Order-btn--${item.firebaseKey}" class="logout-btn fas  btn btn-info">Edit</i>
+            <i id="details-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-success fas">View Details</i>
+            <i id="delete-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-danger fas"> Delete</i>
+          </div>
+    
+        </div>`;
+  });
+  renderToDOM('#store', domString);
 };
 export default viewOrdersPage;
