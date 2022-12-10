@@ -1,0 +1,24 @@
+{
+  "-NIwmLBq4uf1PzTjWusP": {
+    "firebaseKey": "-NIwmLBq4uf1PzTjWusP",
+    "uid": "",
+    "order_type": true,
+    "payment_type": "credit",
+    "order_amt": 0,
+    "tip_amt": 0,
+    "total_amt": 0,
+    "date": "12/10/2021",
+    "order_id": "-NIeNLLJ5zJ4Vm380g6o"
+  },
+  "-NIwmLBui4QlhHpN1NX4": {
+    "firebaseKey": "-NIwmLBui4QlhHpN1NX4",
+    "uid": "",
+    "order_type": true,
+    "payment_type": "credit",
+    "order_amt": 0,
+    "tip_amt": 0,
+    "total_amt": 0,
+    "date": "12/10/2022",
+    "order_id": "-NIePmf0ZZyQQrA6sCjc"
+  }
+}
