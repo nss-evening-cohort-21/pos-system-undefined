@@ -17,7 +17,9 @@ const viewOrdersPage = (array) => {
         
             
             <i id="edit-Order-btn--${item.firebaseKey}" class="logout-btn fas  btn btn-info">Edit</i>
+
             <i id="details-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-success fas">View Details</i>
+            
             <i id="delete-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-danger fas"> Delete</i>
           </div>
     
