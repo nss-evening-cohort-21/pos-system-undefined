@@ -5,9 +5,6 @@ import '../styles/main.scss';
 
 const init = () => {
   ViewDirectorBasedOnUserAuthStatus();
-
-  // USE WITH FIREBASE AUTH
-  // ViewDirectorBasedOnUserAuthStatus();
 };
 
 init();

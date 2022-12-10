@@ -1,11 +1,17 @@
-import { signOut } from '../utils/auth';
+import createAnOrderPage from '../pages/createAnOrderPage';
+import homePage from '../pages/homePage';
+import viewOrdersPage from '../pages/viewOrdersPage';
 
 const navigationEvents = (user) => {
-  console.warn(user);
-
-  document.querySelector('#google').addEventListener('click', () => {
-    console.warn('I am pushing hte logout');
-    signOut();
+  document.querySelector('#viewOrders').addEventListener('click', () => {
+    viewOrdersPage();
+  });
+  document.querySelector('#createAnOrderPage').addEventListener('click', () => {
+    createAnOrderPage();
+  });
+  document.querySelector('#logoHomePage').addEventListener('click', () => {
+    homePage(user);
   });
 };
+
 export default navigationEvents;
