@@ -7,6 +7,7 @@ import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
 import { viewDetailsPage } from '../pages/viewDetailsPage';
 import viewOrdersPage from '../pages/viewOrdersPage';
 import viewRevenuePage from '../pages/viewRevenue';
+import clearDom from '../utils/clearDom';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -25,6 +26,7 @@ const domEvents = (user) => {
       getItem(firebaseKey).then(itemsOnDetailsPage);
     }
     if (e.target.id.includes('addItemBtn')) {
+      clearDom();
       createItemPage();
     }
     if (e.target.id.includes('addPaymentBtn')) {
