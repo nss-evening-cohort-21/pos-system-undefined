@@ -20,7 +20,7 @@ const itemsOnDetailsPage = (itemArray) => {
         </div>`;
   });
 
-  renderToDOM('#store', domString);
+  renderToDOM('#view', domString);
 };
 
 export default itemsOnDetailsPage;

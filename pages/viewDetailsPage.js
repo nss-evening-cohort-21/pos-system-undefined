@@ -1,5 +1,7 @@
+import { getItem } from '../api/itemData';
 import clearDom from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDOM';
+import itemsOnDetailsPage from './itemsOnDetailsPage';
 
 // eslint-disable-next-line import/no-mutable-exports
 let orderIdentify = '';
@@ -12,6 +14,7 @@ const viewDetailsPage = (order) => {
   `;
 
   renderToDOM('#store', domstring);
+  getItem(orderIdentify).then(itemsOnDetailsPage);
 };
 
 export { viewDetailsPage, orderIdentify };

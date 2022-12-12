@@ -1,7 +1,8 @@
-import { createItem, updateItem } from '../api/itemData';
+import { createItem, getItem, updateItem } from '../api/itemData';
 import {
   createOrder, getOrder, getSingleOrder, updateOrder
 } from '../api/orderData';
+import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
 import { viewDetailsPage, orderIdentify } from '../pages/viewDetailsPage';
 import viewOrdersPage from '../pages/viewOrdersPage';
 
@@ -41,6 +42,7 @@ const formEvents = (user) => {
 
         updateItem(patchPayload).then(() => {
           getSingleOrder(orderIdentify).then(viewDetailsPage);
+          getItem(orderIdentify).then(itemsOnDetailsPage);
         });
       });
     }

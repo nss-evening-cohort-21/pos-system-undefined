@@ -9,7 +9,7 @@ const navBar = () => {
 
   <ul class="navbar-nav mr-auto">
     <li class="nav-item active">
-      <a id="viewOrders" class="nav-link" href="#">View All Orders <span class="sr-only">(current)</span></a>
+      <a id="viewOrders" class="nav-link" href="#">View All Orders</a>
     </li>
     <li class="nav-item">
       <a id="createAnOrderPage" class="nav-link" href="#">Create an Order</a>
@@ -21,7 +21,7 @@ const navBar = () => {
   </form>
 
   <div id="logout"></div>
-  
+
 </div>
 </nav>`;
   renderToDOM('#navigation', domString);
