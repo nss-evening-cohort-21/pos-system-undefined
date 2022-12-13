@@ -1,7 +1,7 @@
 import renderToDOM from '../utils/renderToDOM';
 
 const createItemPage = (obj = {}) => {
-  const domString = `<form id="${obj.firebaseKey ? `update-Order--${obj.firebaseKey}` : 'submit-Item'}">
+  const domString = `<form id="${obj.firebaseKey ? `update-Item--${obj.firebaseKey}` : 'submit-Item'}">
   <div class="form-group">
     <label for="exampleInputEmail1">Name Of Item</label>
     <input type="text" class="form-control" id="item_name" aria-describedby="emailHelp" placeholder="">
@@ -13,6 +13,6 @@ const createItemPage = (obj = {}) => {
   <button type="submit" class="btn btn-primary">Add/Edit</button>
 </form>`;
 
-  renderToDOM('#store', domString);
+  renderToDOM('#form-container', domString);
 };
 export default createItemPage;

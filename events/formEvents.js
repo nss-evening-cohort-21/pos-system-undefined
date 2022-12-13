@@ -5,6 +5,7 @@ import {
 import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
 import { viewDetailsPage, orderIdentify } from '../pages/viewDetailsPage';
 import viewOrdersPage from '../pages/viewOrdersPage';
+import clearFormContainer from '../utils/clearFormContainer';
 
 const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
@@ -31,7 +32,7 @@ const formEvents = (user) => {
     if (e.target.id.includes('submit-Item')) {
       console.warn('submit item button pressed');
       const payload = {
-        order_id: orderIdentify.toString(),
+        order_id: `${orderIdentify}`,
         name: document.querySelector('#item_name').value,
         price: document.querySelector('#price').value,
         uid: user.uid,
@@ -62,6 +63,23 @@ const formEvents = (user) => {
       };
       updateOrder(payload).then(() => {
         getOrder(user.uid).then(viewOrdersPage);
+      });
+    }
+    if (e.target.id.includes('update-Item')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      // console.warn('CLICKED UPDATE BOOK', e.target.id);
+
+      const payload = {
+        order_id: `${orderIdentify}`,
+        name: document.querySelector('#item_name').value,
+        price: document.querySelector('#price').value,
+        uid: user.uid,
+        firebaseKey
+      };
+      updateItem(payload).then(() => {
+        getItem(orderIdentify).then(itemsOnDetailsPage);
+        clearFormContainer();
+        getSingleOrder(orderIdentify).then(viewDetailsPage);
       });
     }
   });
