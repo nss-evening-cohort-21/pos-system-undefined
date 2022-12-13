@@ -3,8 +3,8 @@
 
 
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color: grey;
+  color: black;
   text-align: center;
   margin-top: 100px;
 }
@@ -41,4 +41,9 @@ justify-content: center;
 .dollarSign{
   font-size:30px;
   margin-left:15px;
+}
+.card{
+  justify-content:center;
+  background-color:grey;
+  border:solid 2px black;
 }
