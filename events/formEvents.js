@@ -31,7 +31,7 @@ const formEvents = (user) => {
     if (e.target.id.includes('submit-Item')) {
       console.warn('submit item button pressed');
       const payload = {
-        order_id: `${orderIdentify}`,
+        order_id: orderIdentify.toString(),
         name: document.querySelector('#item_name').value,
         price: document.querySelector('#price').value,
         uid: user.uid,
@@ -44,6 +44,24 @@ const formEvents = (user) => {
           getSingleOrder(orderIdentify).then(viewDetailsPage);
           getItem(orderIdentify).then(itemsOnDetailsPage);
         });
+      });
+    }
+    if (e.target.id.includes('update-Order')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      // console.warn('CLICKED UPDATE BOOK', e.target.id);
+
+      const payload = {
+        order_name: document.querySelector('#orderName').value,
+        phone_number: document.querySelector('#customerPhone').value,
+        email: document.querySelector('#email').value,
+        uid: user.uid,
+        date: new Date().toLocaleString(),
+        is_phone: document.querySelector('#orderedByPhone').checked,
+        is_open: true,
+        firebaseKey
+      };
+      updateOrder(payload).then(() => {
+        getOrder(user.uid).then(viewOrdersPage);
       });
     }
   });

@@ -32,6 +32,11 @@ const domEvents = (user) => {
     if (e.target.id.includes('addPaymentBtn')) {
       addPaymentPage();
     }
+    if (e.target.id.includes('edit-Order-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleOrder(firebaseKey).then((order) => createAnOrderPage(order));
+      // getSingleBook(firebaseKey).then(addBookForm); // using the callback method
+    }
   });
 };
 
