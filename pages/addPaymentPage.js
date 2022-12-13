@@ -1,6 +1,8 @@
+import clearDom from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDOM';
 
 const addPaymentPage = () => {
+  clearDom();
   const domString = `<form>
   <div class="dropdown">
   <button class=" logout-btn btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
