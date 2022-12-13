@@ -1,5 +1,5 @@
 {
-  "name": "webpack-5.0-template",
+  "name": "pos-system-undefined",
   "version": "1.0.0",
   "description": "",
   "main": "public/main.js",
@@ -9,7 +9,7 @@
     "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Wesley Vance, Angie Gonzalez, Graham Reid, Mark Hamilton",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.2.0",
