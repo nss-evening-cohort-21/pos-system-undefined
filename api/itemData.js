@@ -14,8 +14,8 @@ const createItem = (payload) => new Promise((resolve, reject) => {
     .then((data) => resolve(data))
     .catch(reject);
 });
-const getItem = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/item.json?orderBy="uid"&equalTo="${uid}"`, {
+const getItem = (orderIdentify) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/item.json?orderBy="order_id"&equalTo="${orderIdentify}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

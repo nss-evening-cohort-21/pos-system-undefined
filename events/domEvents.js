@@ -1,10 +1,13 @@
+import { getItem } from '../api/itemData';
 import { getOrder, getSingleOrder } from '../api/orderData';
 import addPaymentPage from '../pages/addPaymentPage';
 import createAnOrderPage from '../pages/createAnOrderPage';
 import createItemPage from '../pages/createItemPage';
-import viewDetailsPage from '../pages/viewDetailsPage';
+import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
+import { viewDetailsPage } from '../pages/viewDetailsPage';
 import viewOrdersPage from '../pages/viewOrdersPage';
 import viewRevenuePage from '../pages/viewRevenue';
+import clearDom from '../utils/clearDom';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -20,9 +23,10 @@ const domEvents = (user) => {
     if (e.target.id.includes('details-Order-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then(viewDetailsPage);
-      // getSingleBook(firebaseKey).then(addBookForm); // using the callback method
+      getItem(firebaseKey).then(itemsOnDetailsPage);
     }
     if (e.target.id.includes('addItemBtn')) {
+      clearDom();
       createItemPage();
     }
     if (e.target.id.includes('addPaymentBtn')) {

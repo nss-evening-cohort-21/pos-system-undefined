@@ -1,4 +1,9 @@
-import { createOrder, getOrder, updateOrder } from '../api/orderData';
+import { createItem, getItem, updateItem } from '../api/itemData';
+import {
+  createOrder, getOrder, getSingleOrder, updateOrder
+} from '../api/orderData';
+import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
+import { viewDetailsPage, orderIdentify } from '../pages/viewDetailsPage';
 import viewOrdersPage from '../pages/viewOrdersPage';
 
 const formEvents = (user) => {
@@ -14,12 +19,30 @@ const formEvents = (user) => {
         date: new Date().toLocaleString(),
         is_phone: document.querySelector('#orderedByPhone').checked,
         is_open: true,
+        firebaseKey: ''
       };
       createOrder(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
-
         updateOrder(patchPayload).then(() => {
           getOrder(user.uid).then(viewOrdersPage);
+        });
+      });
+    }
+    if (e.target.id.includes('submit-Item')) {
+      console.warn('submit item button pressed');
+      const payload = {
+        order_id: `${orderIdentify}`,
+        name: document.querySelector('#item_name').value,
+        price: document.querySelector('#price').value,
+        uid: user.uid,
+        firebaseKey: ''
+      };
+      createItem(payload).then(({ name }) => {
+        const patchPayload = { firebaseKey: name };
+
+        updateItem(patchPayload).then(() => {
+          getSingleOrder(orderIdentify).then(viewDetailsPage);
+          getItem(orderIdentify).then(itemsOnDetailsPage);
         });
       });
     }
