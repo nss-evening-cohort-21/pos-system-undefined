@@ -30,3 +30,15 @@ justify-content: center;
   display:flex;
   justify-content:center;
 }
+#orderTotal{
+  display:flex;
+  flex-direction: row;
+  justify-content:center;
+}
+#itemTotal{
+  font-size: 30px;
+}
+.dollarSign{
+  font-size:30px;
+  margin-left:15px;
+}

@@ -15,7 +15,7 @@ const viewDetailsPage = (order) => {
   const domstring = `<h1>This is the  ${order.order_name} order</h1>
   <button id="addItemBtn">Add Item</button>
   <button id="addPaymentBtn">Add Payment</button>
-  <div id="itemTotal"></div>
+ <div id="orderTotal"><h3>Order Total</h3><p class="dollarSign">$</p><div id="itemTotal"></div></div>
   `;
 
   renderToDOM('#store', domstring);
