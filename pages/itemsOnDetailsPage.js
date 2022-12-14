@@ -8,7 +8,7 @@ const itemsOnDetailsPage = (itemArray) => {
           <div class="card-body" style="height: 300px;">
             <h5 class="card-title">Item: ${item.name}</h5>
             <p>____________________________</p>
-            <p>Price: ${item.price}</p>
+            <p>Price:$ ${item.price}</p>
           
             
             <i id="edit-Item-btn--${item.firebaseKey}" class="logout-btn fas  btn btn-info">Edit</i>
