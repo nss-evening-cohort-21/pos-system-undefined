@@ -1,6 +1,7 @@
 // import { getItem } from '../api/itemData';
+import deleteOrderItemsRelationship from '../api/mergedData';
 import { getSingleItem } from '../api/itemData';
-import { deleteOrder, getOrder, getSingleOrder } from '../api/orderData';
+import { getOrder, getSingleOrder } from '../api/orderData';
 import addPaymentPage from '../pages/addPaymentPage';
 import createAnOrderPage from '../pages/createAnOrderPage';
 import createItemPage from '../pages/createItemPage';
@@ -69,7 +70,7 @@ const domEvents = (user) => {
       if (window.confirm('You sure you wanna delete this whole order?')) {
         const [, firebaseKey] = e.target.id.split('--');
 
-        deleteOrder(firebaseKey).then(() => {
+        deleteOrderItemsRelationship(firebaseKey).then(() => {
           getOrder(user.uid).then(viewOrdersPage);
         });
       }
