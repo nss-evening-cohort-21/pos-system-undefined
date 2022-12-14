@@ -5,7 +5,6 @@ import { viewDetailsPage } from '../pages/viewDetailsPage';
 const getOrderByDeletedItem = (firebaseKey) => {
   getSingleItem(firebaseKey).then((obj) => {
     const order = obj.order_id;
-    console.warn(order);
     deleteItem(firebaseKey);
     getSingleOrder(order).then(viewDetailsPage);
   });
