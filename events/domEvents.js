@@ -11,6 +11,7 @@ import viewRevenuePage from '../pages/viewRevenue';
 import clearDom from '../utils/clearDom';
 import clearStore from '../utils/clearStore';
 import clearView from '../utils/clearView';
+import getOrderByDeletedItem from '../utils/getOrderIdByDeletedItem';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -52,7 +53,14 @@ const domEvents = (user) => {
       clearStore();
       const [, firebaseKey] = e.target.id.split('--');
       getSingleItem(firebaseKey).then((item) => createItemPage(item));
-      // getSingleBook(firebaseKey).then(addBookForm); // using the callback method
+    }
+    // getSingleBook(firebaseKey).then(addBookForm); // using the callback method
+    if (e.target.id.includes('delete-Item-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Are you sure you want to delete this item?')) {
+        getOrderByDeletedItem(firebaseKey);
+      }
     }
     // CLICK EVENT FOR DELETING AN ORDER
     if (e.target.id.includes('delete-Order-btn')) {
@@ -68,5 +76,4 @@ const domEvents = (user) => {
     }
   });
 };
-
 export default domEvents;
