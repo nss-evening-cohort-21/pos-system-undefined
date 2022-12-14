@@ -7,14 +7,14 @@ const viewOrdersPage = (array) => {
   array.forEach((item) => {
     domString += `<div class="card">
     
-          <div class="card-body" style="height: 300px;">
+          <div class="card-body" style="height: 350px;">
             <h5 class="card-title">Orders: ${item.order_name}</h5>
             <p>____________________________</p>
            <div class="definition"> <p>Phone Number: ${item.phone_number}</p></div>
             <p>email: ${item.email}</p>
           <p>${item.date}</p>
           <p>${item.is_phone === true ? 'Phone Order' : 'In Person'}</p>
-        
+          <p>${item.is_open === true ? 'order open' : 'order closed'}</p>
             
             <i id="edit-Order-btn--${item.firebaseKey}" class="logout-btn fas  btn btn-info">Edit</i>
 
