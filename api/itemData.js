@@ -31,6 +31,20 @@ const getItem = (orderIdentify) => new Promise((resolve, reject) => {
     })
     .catch(reject);
 });
+const getItemPrice = (orderIdentify) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/item.json?orderBy="order_id"&equalTo="${orderIdentify}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const itemPrice = Object.values(data).filter((item) => item.price);
+      resolve(itemPrice);
+    })
+    .catch(reject);
+});
 const updateItem = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/item/${payload.firebaseKey}.json`, {
     method: 'PATCH',
@@ -70,5 +84,6 @@ export {
   getItem,
   updateItem,
   deleteItem,
-  getSingleItem
+  getSingleItem,
+  getItemPrice
 };

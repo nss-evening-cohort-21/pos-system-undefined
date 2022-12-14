@@ -1,4 +1,5 @@
 // import { getItem } from '../api/itemData';
+import { getSingleItem } from '../api/itemData';
 import { deleteOrder, getOrder, getSingleOrder } from '../api/orderData';
 import addPaymentPage from '../pages/addPaymentPage';
 import createAnOrderPage from '../pages/createAnOrderPage';
@@ -8,6 +9,8 @@ import { viewDetailsPage } from '../pages/viewDetailsPage';
 import viewOrdersPage from '../pages/viewOrdersPage';
 import viewRevenuePage from '../pages/viewRevenue';
 import clearDom from '../utils/clearDom';
+import clearStore from '../utils/clearStore';
+import clearView from '../utils/clearView';
 import getOrderByDeletedItem from '../utils/getOrderIdByDeletedItem';
 
 const domEvents = (user) => {
@@ -40,6 +43,18 @@ const domEvents = (user) => {
       console.warn('CLICKED viewRevenue', e.target.id);
       addPaymentPage();
     }
+    if (e.target.id.includes('edit-Order-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleOrder(firebaseKey).then((order) => createAnOrderPage(order));
+      // getSingleBook(firebaseKey).then(addBookForm); // using the callback method
+    }
+    if (e.target.id.includes('edit-Item-btn')) {
+      clearView();
+      clearStore();
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleItem(firebaseKey).then((item) => createItemPage(item));
+    }
+    // getSingleBook(firebaseKey).then(addBookForm); // using the callback method
     if (e.target.id.includes('delete-Item-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       // eslint-disable-next-line no-alert
@@ -61,5 +76,4 @@ const domEvents = (user) => {
     }
   });
 };
-
 export default domEvents;
