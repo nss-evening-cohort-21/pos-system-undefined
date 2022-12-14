@@ -31,7 +31,7 @@ const formEvents = (user) => {
     if (e.target.id.includes('submit-Item')) {
       console.warn('submit item button pressed');
       const payload = {
-        order_id: `${orderIdentify}`,
+        order_id: orderIdentify.toString(),
         name: document.querySelector('#item_name').value,
         price: document.querySelector('#price').value,
         uid: user.uid,
