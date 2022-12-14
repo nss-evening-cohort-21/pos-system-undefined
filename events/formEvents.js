@@ -5,6 +5,7 @@ import {
 import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
 import { viewDetailsPage, orderIdentify } from '../pages/viewDetailsPage';
 import viewOrdersPage from '../pages/viewOrdersPage';
+import clearFormContainer from '../utils/clearFormContainer';
 
 const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
@@ -44,6 +45,41 @@ const formEvents = (user) => {
           getSingleOrder(orderIdentify).then(viewDetailsPage);
           getItem(orderIdentify).then(itemsOnDetailsPage);
         });
+      });
+    }
+    if (e.target.id.includes('update-Order')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      // console.warn('CLICKED UPDATE BOOK', e.target.id);
+
+      const payload = {
+        order_name: document.querySelector('#orderName').value,
+        phone_number: document.querySelector('#customerPhone').value,
+        email: document.querySelector('#email').value,
+        uid: user.uid,
+        date: new Date().toLocaleString(),
+        is_phone: document.querySelector('#orderedByPhone').checked,
+        is_open: true,
+        firebaseKey
+      };
+      updateOrder(payload).then(() => {
+        getOrder(user.uid).then(viewOrdersPage);
+      });
+    }
+    if (e.target.id.includes('update-Item')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      // console.warn('CLICKED UPDATE BOOK', e.target.id);
+
+      const payload = {
+        order_id: orderIdentify.toString(),
+        name: document.querySelector('#item_name').value,
+        price: document.querySelector('#price').value,
+        uid: user.uid,
+        firebaseKey
+      };
+      updateItem(payload).then(() => {
+        getItem(orderIdentify).then(itemsOnDetailsPage);
+        clearFormContainer();
+        getSingleOrder(orderIdentify).then(viewDetailsPage);
       });
     }
   });

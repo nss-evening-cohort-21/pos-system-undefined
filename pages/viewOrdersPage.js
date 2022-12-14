@@ -8,7 +8,7 @@ const viewOrdersPage = (array) => {
     domString += `<div class="card">
     
           <div class="card-body" style="height: 350px;">
-            <h5 class="card-title">Orders: ${item.order_name}</h5>
+            <h5 class="card-title">Order: ${item.order_name}</h5>
             <p>____________________________</p>
            <div class="definition"> <p>Phone Number: ${item.phone_number}</p></div>
             <p>email: ${item.email}</p>

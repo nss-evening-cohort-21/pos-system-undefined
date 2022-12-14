@@ -6,15 +6,15 @@ const createAnOrderPage = (obj = {}) => {
   const domstring = `<form id="${obj.firebaseKey ? `update-Order--${obj.firebaseKey}` : 'submit-Order'}">
   <div class="form-group">
   <label for="orderName"></label></label>
-  <input type="text" class="form-control" id="orderName" placeholder="Order Name">
+  <input type="text" class="form-control" id="orderName" placeholder="Order Name" value="${obj.order_name || ''}">
 </div>
 <div class="form-group">
 <label for="customerPhone"></label></label>
-<input type="text" class="form-control" id="customerPhone" placeholder="Customer Phone">
+<input type="text" class="form-control" id="customerPhone" placeholder="Customer Phone" value="${obj.phone_number || ''}">
 </div>
   <div class="form-group">
     <label for="email"></label>
-    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" value="${obj.email || ''}">
   </div>
 
   <div class="form-check">
@@ -23,7 +23,7 @@ const createAnOrderPage = (obj = {}) => {
     Ordered by Phone
   </label>
 </div>
-  <button id="submitCreateOrder" type="submit" class="btn btn-primary">Create Order</button>
+  <button id="submitCreateOrder" type="submit" class="btn btn-primary">Create/Edit Order</button>
 </form>`;
   renderToDOM('#form-container', domstring);
 };
