@@ -6,8 +6,11 @@ import itemsOnDetailsPage from './itemsOnDetailsPage';
 
 // eslint-disable-next-line import/no-mutable-exports
 let orderIdentify = '';
+// eslint-disable-next-line import/no-mutable-exports
+let orderType = '';
 const viewDetailsPage = (order) => {
   orderIdentify = order.firebaseKey;
+  orderType = order.is_phone;
   getItemPrice(orderIdentify).then((items) => (itemsCalculator(items)));
 
   clearDom();
@@ -22,4 +25,4 @@ const viewDetailsPage = (order) => {
   getItem(orderIdentify).then(itemsOnDetailsPage);
 };
 
-export { viewDetailsPage, orderIdentify };
+export { viewDetailsPage, orderIdentify, orderType };
