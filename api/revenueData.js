@@ -65,10 +65,25 @@ const getSingleRevenue = (firebaseKey) => new Promise((resolve, reject) => {
     .then((data) => resolve((data)))
     .catch(reject);
 });
+const getRevenuePrice = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/revenue.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const revPrice = Object.values(data).filter((revenue) => revenue.order_amt);
+      resolve(revPrice);
+    })
+    .catch(reject);
+});
 export {
   createRevenue,
   getRevenue,
   updateRevenue,
   deleteRevenue,
-  getSingleRevenue
+  getSingleRevenue,
+  getRevenuePrice
 };
