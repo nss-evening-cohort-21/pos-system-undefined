@@ -2,10 +2,13 @@ import { createItem, getItem, updateItem } from '../api/itemData';
 import {
   createOrder, getOrder, getSingleOrder, updateOrder
 } from '../api/orderData';
+import { createRevenue, getRevenue } from '../api/revenueData';
 import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
-import { viewDetailsPage, orderIdentify } from '../pages/viewDetailsPage';
+import { viewDetailsPage, orderIdentify, orderType } from '../pages/viewDetailsPage';
 import viewOrdersPage from '../pages/viewOrdersPage';
+import viewRevenuePage from '../pages/viewRevenue';
 import clearFormContainer from '../utils/clearFormContainer';
+import { sumTogether } from '../utils/itemCalculator';
 
 const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
@@ -80,6 +83,31 @@ const formEvents = (user) => {
         getItem(orderIdentify).then(itemsOnDetailsPage);
         clearFormContainer();
         getSingleOrder(orderIdentify).then(viewDetailsPage);
+      });
+    }
+    if (e.target.id.includes('submit-revenue')) {
+      const [, firebaseKey] = e.target.id.split('--');
+
+      const payload = {
+        order_id: orderIdentify.toString(),
+        order_amt: document.querySelector('#tip-amt').valueAsNumber + sumTogether,
+        tip_amt: document.querySelector('#tip-amt').value,
+        payment_type: document.querySelector('#paymentDropDown').value,
+        order_type: orderType.toString(),
+        date: new Date().toLocaleString(),
+        uid: user.uid,
+        firebaseKey
+      };
+
+      createRevenue(payload);
+      getSingleOrder(orderIdentify).then((order) => {
+        const payload2 = {
+          is_open: !order.is_open,
+          firebaseKey: orderIdentify
+        };
+        updateOrder(payload2).then(() => {
+          getRevenue(firebaseKey).then(viewRevenuePage);
+        });
       });
     }
   });
