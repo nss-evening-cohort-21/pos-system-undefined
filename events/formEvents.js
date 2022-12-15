@@ -2,10 +2,11 @@ import { createItem, getItem, updateItem } from '../api/itemData';
 import {
   createOrder, getOrder, getSingleOrder, updateOrder
 } from '../api/orderData';
-import { createRevenue } from '../api/revenueData';
+import { createRevenue, getRevenue } from '../api/revenueData';
 import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
 import { viewDetailsPage, orderIdentify, orderType } from '../pages/viewDetailsPage';
 import viewOrdersPage from '../pages/viewOrdersPage';
+import viewRevenuePage from '../pages/viewRevenue';
 import clearFormContainer from '../utils/clearFormContainer';
 import { sumTogether } from '../utils/itemCalculator';
 
@@ -97,7 +98,17 @@ const formEvents = (user) => {
         uid: user.uid,
         firebaseKey
       };
+
       createRevenue(payload);
+      getSingleOrder(orderIdentify).then((order) => {
+        const payload2 = {
+          is_open: !order.is_open,
+          firebaseKey: orderIdentify
+        };
+        updateOrder(payload2).then(() => {
+          getRevenue(firebaseKey).then(viewRevenuePage);
+        });
+      });
     }
   });
 };
