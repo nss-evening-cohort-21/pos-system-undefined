@@ -5,7 +5,7 @@ import {
 import { createRevenue, getRevenue } from '../api/revenueData';
 import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
 import { viewDetailsPage, orderIdentify, orderType } from '../pages/viewDetailsPage';
-import viewOrdersPage from '../pages/viewOrdersPage';
+import { viewOrdersPage } from '../pages/viewOrdersPage';
 import viewRevenuePage from '../pages/viewRevenue';
 import clearFormContainer from '../utils/clearFormContainer';
 import { sumTogether } from '../utils/itemCalculator';

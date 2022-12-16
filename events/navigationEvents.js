@@ -1,7 +1,7 @@
 import { getOrder } from '../api/orderData';
 import createAnOrderPage from '../pages/createAnOrderPage';
 import homePage from '../pages/homePage';
-import viewOrdersPage from '../pages/viewOrdersPage';
+import { viewOrdersPage } from '../pages/viewOrdersPage';
 import clearDom from '../utils/clearDom';
 
 const navigationEvents = (user) => {

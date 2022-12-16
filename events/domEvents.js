@@ -7,12 +7,13 @@ import createAnOrderPage from '../pages/createAnOrderPage';
 import createItemPage from '../pages/createItemPage';
 // import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
 import { viewDetailsPage } from '../pages/viewDetailsPage';
-import viewOrdersPage from '../pages/viewOrdersPage';
+import { viewOrdersPage } from '../pages/viewOrdersPage';
 import viewRevenuePage from '../pages/viewRevenue';
 import clearDom from '../utils/clearDom';
 import clearStore from '../utils/clearStore';
 import clearView from '../utils/clearView';
 import getOrderByDeletedItem from '../utils/getOrderIdByDeletedItem';
+import { createSearchOrderArray } from '../components/createSearchOrderArray';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -20,6 +21,7 @@ const domEvents = (user) => {
     if (e.target.id.includes('viewOrders')) {
       console.warn('CLICKED viewOrders', e.target.id);
       getOrder(user.uid).then(viewOrdersPage);
+      getOrder(user.uid).then(createSearchOrderArray);
     }
     if (e.target.id.includes('createAnOrder')) {
       console.warn('CLICKED createAnOrder', e.target.id);
