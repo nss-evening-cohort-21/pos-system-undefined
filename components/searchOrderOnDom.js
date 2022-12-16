@@ -7,18 +7,22 @@ const searchOrderOnDom = (arr) => {
   // eslint-disable-next-line no-restricted-syntax
   for (const item of arr) {
     formCard += `<div class="card">
-  
-  <div class="card-body" style="height: 300px;">
-    <h5 class="card-title">Term: ${item.order_name}</h5>
-    <p>____________________________</p>
-    <p>Definition: ${item.definition}</p>
-    <p>Language: ${item.language}</p>
-  <p>${item.time}</p>
+    
+    <div class="card-body" style="height: 350px;">
+      <h5 class="card-title">Order: ${item.order_name}</h5>
+      <p>____________________________</p>
+     <div class="definition"> <p>Phone Number: ${item.phone_number}</p></div>
+      <p>email: ${item.email}</p>
+    <p>${item.date}</p>
+    <p>${item.is_phone === true ? 'Phone Order' : 'In Person'}</p>
+    <p>${item.is_open === true ? 'order open' : 'order closed'}</p>
+      
+      ${item.is_open === true ? `<i id="edit-Order-btn--${item.firebaseKey}" class="logout-btn fas  btn btn-info">Edit</i>` : ''}
+      ${item.is_open === true ? `<i id="details-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-success fas">View Details</i>` : ''}
+      ${item.is_open === true ? `<i id="delete-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-danger fas">Delete</i>` : ''}
 
-    <i id="delete-Vocabulary-btn--${item.firebaseKey}" class="logout-btn btn btn-danger fas"> Delete</i>
-    <i id="edit-Vocabulary-btn--${item.firebaseKey}" class="logout-btn fas btn btn-info">Edit</i>
-  </div>
-</div>`;
+
+  </div>`;
   }
   renderToDOM('#store', formCard);
 };
