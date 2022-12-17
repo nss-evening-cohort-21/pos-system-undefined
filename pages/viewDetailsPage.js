@@ -22,7 +22,7 @@ const viewDetailsPage = (order) => {
  <div id="orderTotal"><h3>Order Total</h3><p class="dollarSign">$</p><div id="itemTotal"></div></div>
   `;
 
-  renderToDOM('#store', domstring);
+  renderToDOM('#form-container', domstring);
   getItem(orderIdentify).then(itemsOnDetailsPage);
   searchItemEvent();
 };

@@ -1,8 +1,10 @@
 import clearStore from '../../utils/clear/clearStore';
+import clearView from '../../utils/clear/clearView';
 import renderToDOM from '../../utils/renderToDOM';
 
 const searchItemOnDom = (arr) => {
   clearStore();
+  clearView();
   let formCard = '';
   // eslint-disable-next-line no-restricted-syntax
   for (const item of arr) {

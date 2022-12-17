@@ -10,6 +10,7 @@ import viewRevenuePage from '../pages/viewRevenue';
 import clearFormContainer from '../utils/clear/clearFormContainer';
 
 import { sumTogether } from '../utils/Calculators/itemCalculator';
+import { orderArray } from '../utils/createArray/createSearchOrderArray';
 
 const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
@@ -26,6 +27,7 @@ const formEvents = (user) => {
         is_open: true,
         firebaseKey: ''
       };
+      orderArray.push(payload);
       createOrder(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateOrder(patchPayload).then(() => {
