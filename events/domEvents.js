@@ -67,6 +67,16 @@ const domEvents = (user) => {
         getOrderByDeletedItem(firebaseKey);
       }
     }
+    // FILTER BY OPEN ORDERS
+    if (e.target.id.includes('openOrders')) {
+      getOrder(user.uid).then((arr) => {
+        let domStringFilter = '';
+        arr.forEach((order) => 
+        if (order.is_open===true) {
+          domStringFilter += ``
+        });
+      })
+    }
     // CLICK EVENT FOR DELETING AN ORDER
     if (e.target.id.includes('delete-Order-btn')) {
       console.warn('CLICKED delete-Order-btn', e.target.id);
