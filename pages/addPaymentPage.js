@@ -3,12 +3,10 @@ import renderToDOM from '../utils/renderToDOM';
 
 const addPaymentPage = () => {
   clearDom();
-  const domString = `<form id="submit-revenue">
-  <div class="dropdown"></div>
-  <button class=" logout-btn btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   Select Payment Type
-  </button>
-  <select id="paymentDropDown"  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  const domString = `
+  <form id="submit-revenue">
+  <label for="payment">Please Select a Payment Type:</label>
+  <select id="paymentDropDown"  class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" aria-labelledby="dropdownMenuButton">
     <option value="debit" class="dropdown-item" id="paymentOne">DEBIT</option>
     <option value="cash" class="dropdown-item" id="paymentTwoe">CASH</option>
     <option value="credit" class="dropdown-item" id="paymentThree">CREDIT</option>

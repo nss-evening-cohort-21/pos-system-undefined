@@ -96,7 +96,7 @@ const formEvents = (user) => {
       const payload = {
         order_id: orderIdentify.toString(),
         order_amt: document.querySelector('#tip-amt').valueAsNumber + sumTogether,
-        tip_amt: document.querySelector('#tip-amt').value,
+        tip_amt: document.querySelector('#tip-amt').valueAsNumber,
         payment_type: document.querySelector('#paymentDropDown').value,
         order_type: orderType.toString(),
         date: new Date().toLocaleString(),
