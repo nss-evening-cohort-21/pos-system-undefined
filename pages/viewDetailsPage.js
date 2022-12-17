@@ -1,6 +1,7 @@
 import { getItem, getItemPrice } from '../api/itemData';
-import clearDom from '../utils/clearDom';
-import { itemsCalculator } from '../utils/itemCalculator';
+import searchItemEvent from '../events/searchItemEvent';
+import clearDom from '../utils/clear/clearDom';
+import { itemsCalculator } from '../utils/Calculators/itemCalculator';
 import renderToDOM from '../utils/renderToDOM';
 import itemsOnDetailsPage from './itemsOnDetailsPage';
 
@@ -16,7 +17,11 @@ const viewDetailsPage = (order) => {
 
   clearDom();
 
-  const domstring = `<h1>This is the  ${order.order_name} order</h1>
+  const domstring = `
+  <form class="form-inline my-2 my-lg-0">
+    <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  </form>
+  <h1>This is the  ${order.order_name} order</h1>
   <button id="addItemBtn" class="btn btn-secondary">Add Item <i class="fa-light fas fa-plus"></i></button>
   <button id="addPaymentBtn" class="btn btn-success">Add Payment <i class="fa-thin fas fa-dollar-sign"></i></button>
   <div id="orderTotal">
@@ -26,8 +31,9 @@ const viewDetailsPage = (order) => {
   </div>
   `;
 
-  renderToDOM('#store', domstring);
+  renderToDOM('#form-container', domstring);
   getItem(orderIdentify).then(itemsOnDetailsPage);
+  searchItemEvent();
 };
 
 export { viewDetailsPage, orderIdentify, orderType };

@@ -1,4 +1,4 @@
-import renderToDOM from './renderToDOM';
+import renderToDOM from '../renderToDOM';
 // eslint-disable-next-line import/no-mutable-exports
 let sumTogether = 0;
 const itemsCalculator = (array) => {
