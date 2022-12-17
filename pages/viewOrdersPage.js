@@ -4,9 +4,9 @@ import renderToDOM from '../utils/renderToDOM';
 
 const viewOrdersPage = (array) => {
   clearDom();
-  const searchBarString = ` <form class="form-inline my-2 my-lg-0">
-  <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-</form>`;
+  //   const searchBarString = ` <form class="form-inline my-2 my-lg-0">
+  //   <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  // </form>`;
 
   let domString = '';
   array.forEach((item) => {
@@ -28,7 +28,7 @@ const viewOrdersPage = (array) => {
     
         </div>`;
   });
-  renderToDOM('#form-container', searchBarString);
+  // renderToDOM('#form-container', searchBarString);
   renderToDOM('#store', domString);
   searchOrderEvent();
 };

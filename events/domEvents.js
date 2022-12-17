@@ -1,6 +1,6 @@
 // import { getItem } from '../api/itemData';
 import deleteOrderItemsRelationship from '../api/mergedData';
-import { getSingleItem } from '../api/itemData';
+import { getItem, getSingleItem } from '../api/itemData';
 import { getOrder, getSingleOrder } from '../api/orderData';
 import addPaymentPage from '../pages/addPaymentPage';
 import createAnOrderPage from '../pages/createAnOrderPage';
@@ -13,7 +13,8 @@ import clearDom from '../utils/clearDom';
 import clearStore from '../utils/clearStore';
 import clearView from '../utils/clearView';
 import getOrderByDeletedItem from '../utils/getOrderIdByDeletedItem';
-import { createSearchOrderArray } from '../components/createSearchOrderArray';
+import { createSearchOrderArray } from '../utils/createArray/createSearchOrderArray';
+import { createSearchItemArray } from '../utils/createArray/createSearchItemArray';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -35,7 +36,7 @@ const domEvents = (user) => {
       console.warn('CLICKED details-Order-btn', e.target.id);
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then(viewDetailsPage);
-      // getItem(firebaseKey).then(itemsOnDetailsPage); redundant
+      getItem(firebaseKey).then(createSearchItemArray);
     }
     if (e.target.id.includes('addItemBtn')) {
       console.warn('CLICKED addItemBtn', e.target.id);

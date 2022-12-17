@@ -1,4 +1,5 @@
 import { getItem, getItemPrice } from '../api/itemData';
+import searchItemEvent from '../events/searchItemEvent';
 import clearDom from '../utils/clearDom';
 import { itemsCalculator } from '../utils/itemCalculator';
 import renderToDOM from '../utils/renderToDOM';
@@ -23,6 +24,7 @@ const viewDetailsPage = (order) => {
 
   renderToDOM('#store', domstring);
   getItem(orderIdentify).then(itemsOnDetailsPage);
+  searchItemEvent();
 };
 
 export { viewDetailsPage, orderIdentify, orderType };
