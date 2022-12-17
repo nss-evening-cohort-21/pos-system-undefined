@@ -2,7 +2,7 @@ import { getOrder } from '../api/orderData';
 import createAnOrderPage from '../pages/createAnOrderPage';
 import homePage from '../pages/homePage';
 import { viewOrdersPage } from '../pages/viewOrdersPage';
-import clearDom from '../utils/clearDom';
+import clearDom from '../utils/clear/clearDom';
 
 const navigationEvents = (user) => {
   document.querySelector('#viewOrders').addEventListener('click', () => {

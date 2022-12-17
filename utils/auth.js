@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import clearNavigation from './clearNavigation';
+import clearNavigation from './clear/clearNavigation';
 
 const signIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();

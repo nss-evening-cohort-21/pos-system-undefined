@@ -1,4 +1,5 @@
-import searchOrderOnDom from '../pages/searchOrderOnDom';
+import searchOrderOnDom from '../pages/searchOnDom/searchOrderOnDom';
+import clearView from '../utils/clear/clearView';
 import { orderArray } from '../utils/createArray/createSearchOrderArray';
 
 const searchOrderEvent = () => {
@@ -12,6 +13,7 @@ const searchOrderEvent = () => {
     || taco.email.toLowerCase().includes(searchValue)
     || taco.date.toLowerCase().includes(searchValue));
     searchOrderOnDom(searchResult);
+    clearView();
   });
 };
 export default searchOrderEvent;

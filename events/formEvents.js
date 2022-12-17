@@ -7,8 +7,9 @@ import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
 import { viewDetailsPage, orderIdentify, orderType } from '../pages/viewDetailsPage';
 import { viewOrdersPage } from '../pages/viewOrdersPage';
 import viewRevenuePage from '../pages/viewRevenue';
-import clearFormContainer from '../utils/clearFormContainer';
-import { sumTogether } from '../utils/itemCalculator';
+import clearFormContainer from '../utils/clear/clearFormContainer';
+
+import { sumTogether } from '../utils/Calculators/itemCalculator';
 
 const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {

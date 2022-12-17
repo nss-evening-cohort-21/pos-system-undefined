@@ -1,7 +1,7 @@
 import { getItem, getItemPrice } from '../api/itemData';
 import searchItemEvent from '../events/searchItemEvent';
-import clearDom from '../utils/clearDom';
-import { itemsCalculator } from '../utils/itemCalculator';
+import clearDom from '../utils/clear/clearDom';
+import { itemsCalculator } from '../utils/Calculators/itemCalculator';
 import renderToDOM from '../utils/renderToDOM';
 import itemsOnDetailsPage from './itemsOnDetailsPage';
 

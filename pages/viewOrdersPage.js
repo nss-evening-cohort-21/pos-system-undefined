@@ -1,5 +1,5 @@
 import searchOrderEvent from '../events/searchOrderEvent';
-import clearDom from '../utils/clearDom';
+import clearDom from '../utils/clear/clearDom';
 import renderToDOM from '../utils/renderToDOM';
 
 const viewOrdersPage = (array) => {

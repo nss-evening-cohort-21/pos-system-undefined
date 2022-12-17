@@ -1,7 +1,7 @@
 import { getRevenuePrice } from '../api/revenueData';
-import clearDom from '../utils/clearDom';
+import clearDom from '../utils/clear/clearDom';
 import renderToDOM from '../utils/renderToDOM';
-import { revCalculator } from '../utils/revenueCalculator';
+import { revCalculator } from '../utils/Calculators/revenueCalculator';
 import { orderIdentify } from './viewDetailsPage';
 
 const viewRevenuePage = () => {

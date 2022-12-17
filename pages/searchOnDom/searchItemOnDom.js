@@ -1,5 +1,5 @@
-import clearStore from '../utils/clearStore';
-import renderToDOM from '../utils/renderToDOM';
+import clearStore from '../../utils/clear/clearStore';
+import renderToDOM from '../../utils/renderToDOM';
 
 const searchItemOnDom = (arr) => {
   clearStore();

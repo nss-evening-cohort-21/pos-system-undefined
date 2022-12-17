@@ -1,4 +1,4 @@
-import searchItemOnDom from '../pages/searchItemOnDom';
+import searchItemOnDom from '../pages/searchOnDom/searchItemOnDom';
 import { itemArray } from '../utils/createArray/createSearchItemArray';
 
 const searchItemEvent = () => {

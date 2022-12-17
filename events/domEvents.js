@@ -9,12 +9,13 @@ import createItemPage from '../pages/createItemPage';
 import { viewDetailsPage } from '../pages/viewDetailsPage';
 import { viewOrdersPage } from '../pages/viewOrdersPage';
 import viewRevenuePage from '../pages/viewRevenue';
-import clearDom from '../utils/clearDom';
-import clearStore from '../utils/clearStore';
-import clearView from '../utils/clearView';
+import clearDom from '../utils/clear/clearDom';
+import clearStore from '../utils/clear/clearStore';
+
 import getOrderByDeletedItem from '../utils/getOrderIdByDeletedItem';
 import { createSearchOrderArray } from '../utils/createArray/createSearchOrderArray';
 import { createSearchItemArray } from '../utils/createArray/createSearchItemArray';
+import clearView from '../utils/clear/clearView';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {

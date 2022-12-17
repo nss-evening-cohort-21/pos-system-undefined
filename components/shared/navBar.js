@@ -1,5 +1,5 @@
 import renderToDOM from '../../utils/renderToDOM';
-import logoutButton from '../logoutButton';
+import logoutButton from '../logButtons/logoutButton';
 
 const navBar = () => {
   const domString = `<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
