@@ -7,6 +7,16 @@ const viewOrdersPage = (array) => {
   const searchBarString = ` <form class="form-inline my-2 my-lg-0">
    <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
    </form>`;
+  const filterOrders = `<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    View Orders By:
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" id="allOrders">All Orders</a></li>
+    <li><a class="dropdown-item" id="openOrders">Open Orders</a></li>
+    <li><a class="dropdown-item" id="closedOrders">Closed Orders</a></li>
+  </ul>
+</div>`;
 
   let domString = '';
   array.forEach((item) => {
@@ -29,6 +39,7 @@ const viewOrdersPage = (array) => {
         </div>`;
   });
   renderToDOM('#form-container', searchBarString);
+  renderToDOM('#filter-container', filterOrders);
   renderToDOM('#store', domString);
   searchOrderEvent();
 };
