@@ -11,6 +11,7 @@ import clearFormContainer from '../utils/clear/clearFormContainer';
 
 import { sumTogether } from '../utils/Calculators/itemCalculator';
 import { orderArray } from '../utils/createArray/createSearchOrderArray';
+import { itemArray } from '../utils/createArray/createSearchItemArray';
 
 const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
@@ -44,6 +45,7 @@ const formEvents = (user) => {
         uid: user.uid,
         firebaseKey: ''
       };
+      itemArray.push(payload);
       createItem(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
 
