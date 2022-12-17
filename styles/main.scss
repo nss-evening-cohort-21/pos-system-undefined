@@ -3,8 +3,47 @@
 
 
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color: grey;
+  color: black;
   text-align: center;
   margin-top: 100px;
+}
+.opening-logo{
+  width:500px;
+  height:500px;
+  border-radius:500px;
+  margin:50px;
+}
+.nav-logo{
+  width:100px;
+  height: 100px;
+  border-radius:100px;
+}
+.homescreen-btns{
+  display:flex;
+  flex-direction: column;
+justify-content: center;
+ width:30%;
+ margin:25px;
+}
+.buttonHolder{
+  display:flex;
+  justify-content:center;
+}
+#orderTotal{
+  display:flex;
+  flex-direction: row;
+  justify-content:center;
+}
+#itemTotal{
+  font-size: 30px;
+}
+.dollarSign{
+  font-size:30px;
+  margin-left:15px;
+}
+.card{
+  justify-content:center;
+  background-color:grey;
+  border:solid 2px black;
 }

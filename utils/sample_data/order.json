@@ -1,0 +1,74 @@
+{
+  "-NIeNLLJ5zJ4Vm380g6o": {
+      "date": "12/06/22",
+      "email": "grahamreidtechnology@gmail.com",
+      "firebaseKey": "-NIeNLLJ5zJ4Vm380g6o",
+      "is_open": true,
+      "is_phone": false,
+      "order_name": "Graham Reid",
+      "payment_type": "card",
+      "phone_number": "629-241-9881",
+      "tip_amount": "10.00",
+      "uid": "ZCNSkLGlYNUhUMM3gyNNdrz1Ggw2"
+  },
+  "-NIxI44sgLsAFi00JW2l": {
+      "date": "12/10/2022, 12:29:07 PM",
+      "email": "thisisadifferentorder@gmail.com",
+      "firebaseKey": "-NIxI44sgLsAFi00JW2l",
+      "is_open": true,
+      "is_phone": "false",
+      "order_name": "this is a different order",
+      "phone_number": "454545",
+      "uid": "ZCNSkLGlYNUhUMM3gyNNdrz1Ggw2"
+  },
+  "-NIxO0GEZp_4cPMXr4xD": {
+      "date": "12/10/2022, 12:55:05 PM",
+      "email": "grahamreidtechnology@gmail.com",
+      "firebaseKey": "-NIxO0GEZp_4cPMXr4xD",
+      "is_open": true,
+      "is_phone": false,
+      "order_name": "is checked ????",
+      "phone_number": "454545",
+      "uid": "ZCNSkLGlYNUhUMM3gyNNdrz1Ggw2"
+  },
+  "-NIxOA0q3V-QLM6V7ERc": {
+      "date": "12/10/2022, 12:55:45 PM",
+      "email": "asl@gmail.com",
+      "firebaseKey": "-NIxOA0q3V-QLM6V7ERc",
+      "is_open": true,
+      "is_phone": true,
+      "order_name": "this time checked for ordered by phone",
+      "phone_number": "34987",
+      "uid": "ZCNSkLGlYNUhUMM3gyNNdrz1Ggw2"
+  },
+  "-NIxTvKpOmrQdR5y6etg": {
+      "date": "12/10/2022, 1:20:53 PM",
+      "email": "ah@ah.com",
+      "firebaseKey": "-NIxTvKpOmrQdR5y6etg",
+      "is_open": true,
+      "is_phone": true,
+      "order_name": "Amanda Hamilton",
+      "phone_number": "8652034172",
+      "uid": "bFdpWsSrI0hPcvFDsjRQtE53a5A2"
+  },
+  "-NJ3Ip5c_8CmOS11Xh-O": {
+      "date": "12/11/2022, 4:20:20 PM",
+      "email": "angie@angie.com",
+      "firebaseKey": "-NJ3Ip5c_8CmOS11Xh-O",
+      "is_open": true,
+      "is_phone": true,
+      "order_name": "Angie's Order for The Big Game TradeMark",
+      "phone_number": "18001234567",
+      "uid": "fSpj7xcN6vej3MJ5OOBF0GV2p4R2"
+  },
+  "-NJ3JFiDgj4NlxS21yF_": {
+      "date": "12/11/2022, 7:00:00 PM",
+      "email": "some@email.com",
+      "firebaseKey": "-NJ3JFiDgj4NlxS21yF_",
+      "is_open": true,
+      "is_phone": true,
+      "order_name": "Wesley's Order for The Big Game TradeMark",
+      "phone_number": "18007654321",
+      "uid": "OrTDs2TT5pgecxIGtKQUSG0phoK2"
+  }
+}

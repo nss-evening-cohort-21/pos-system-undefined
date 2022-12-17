@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import clearNavigation from './clear/clearNavigation';
 
 const signIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -7,6 +8,7 @@ const signIn = () => {
 };
 
 const signOut = () => {
+  clearNavigation();
   firebase.auth().signOut();
 };
 

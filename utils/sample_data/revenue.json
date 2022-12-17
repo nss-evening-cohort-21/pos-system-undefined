@@ -1,0 +1,68 @@
+{
+  "-NIwmLBq4uf1PzTjWusP": {
+      "date": "12/10/2021",
+      "firebaseKey": "-NIwmLBq4uf1PzTjWusP",
+      "is_phone": true,
+      "order_amt": 0,
+      "order_id": "-NIeNLLJ5zJ4Vm380g6o",
+      "payment_type": "credit",
+      "tip_amt": 0,
+      "total_amt": 0,
+      "uid": ""
+  },
+  "-NIwmLBui4QlhHpN1NX4": {
+      "date": "12/10/2022",
+      "firebaseKey": "-NIwmLBui4QlhHpN1NX4",
+      "is_phone": true,
+      "order_amt": 0,
+      "order_id": "-NIePmf0ZZyQQrA6sCjc",
+      "payment_type": "credit",
+      "tip_amt": 0,
+      "total_amt": 0,
+      "uid": "ZCNSkLGlYNUhUMM3gyNNdrz1Ggw2"
+  },
+  "-NJ3_3FHFDw1EKymDPMe": {
+      "date": "12/11/2021",
+      "firebaseKey": "",
+      "is_phone": true,
+      "order_amt": 0,
+      "order_id": "",
+      "payment_type": "cash",
+      "tip_amt": 0,
+      "total_amt": 0,
+      "uid": ""
+  },
+  "-NJ3dllUfNA7fPRmv4s9": {
+      "date": "12/11/2021",
+      "firebaseKey": "-NJ3dllUfNA7fPRmv4s9",
+      "is_phone": true,
+      "order_amt": 15.99,
+      "order_id": "-NJ3Ip5c_8CmOS11Xh-O",
+      "payment_type": "mobile-payment",
+      "tip_amt": 5,
+      "total_amt": 20.99,
+      "uid": "fSpj7xcN6vej3MJ5OOBF0GV2p4R2"
+  },
+  "-NJ3fF4V5e6_7zDxLHUZ": {
+      "date": "12/11/2021",
+      "firebaseKey": "",
+      "is_phone": true,
+      "order_amt": 30,
+      "order_id": "-NJ3JFiDgj4NlxS21yF_",
+      "payment_type": "cash",
+      "tip_amt": 10,
+      "total_amt": 40,
+      "uid": "OrTDs2TT5pgecxIGtKQUSG0phoK2"
+  },
+  "-NJ3fs64FcEJ9nxRz6dQ": {
+      "date": "12/11/2021",
+      "firebaseKey": "-NJ3fs64FcEJ9nxRz6dQ",
+      "is_phone": true,
+      "order_amt": 21,
+      "order_id": "-NIxTvKpOmrQdR5y6etg",
+      "payment_type": "debit",
+      "tip_amt": 5,
+      "total_amt": 26,
+      "uid": "bFdpWsSrI0hPcvFDsjRQtE53a5A2"
+  }
+}
