@@ -15,9 +15,7 @@ const navBar = () => {
       <a id="createAnOrderPage" class="nav-link" href="#">Create an Order</a>
     </li>
   </ul>
-  <form class="form-inline my-2 my-lg-0">
-  <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
- </form>
+ 
 
   <div id="logout"></div>
 

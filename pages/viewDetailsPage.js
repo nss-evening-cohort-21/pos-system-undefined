@@ -20,6 +20,9 @@ const viewDetailsPage = (order) => {
   <button id="addItemBtn">Add Item</button>
   <button id="addPaymentBtn">Add Payment</button>
  <div id="orderTotal"><h3>Order Total</h3><p class="dollarSign">$</p><div id="itemTotal"></div></div>
+ <form class="form-inline my-2 my-lg-0">
+ <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+</form>
   `;
 
   renderToDOM('#form-container', domstring);
