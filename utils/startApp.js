@@ -5,6 +5,7 @@ import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
 import navigationEvents from '../events/navigationEvents';
 import homePage from '../pages/homePage';
+import datePick from './datePicker';
 
 const startApp = (user) => {
   domBuilder();
@@ -13,6 +14,7 @@ const startApp = (user) => {
   navBar();
   homePage(user);
   logoutButton();
+  datePick();
   navigationEvents(user);
 };
 export default startApp;
