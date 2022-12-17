@@ -16,11 +16,11 @@ const viewOrdersPage = (array) => {
           <p>${item.is_phone === true ? 'Phone Order' : 'In Person'}</p>
           <p>${item.is_open === true ? 'order open' : 'order closed'}</p>
             
-            <i id="edit-Order-btn--${item.firebaseKey}" class="logout-btn fas  btn btn-info">Edit</i>
+            <i id="edit-Order-btn--${item.firebaseKey}" class="logout-btn fas  btn btn-info"><i class="fas fa-edit"></i> Edit</i>
 
-            <i id="details-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-success fas">View Details</i>
+            <i id="details-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-success fas"><i class="fas fa-eye"></i> View Details</i>
             
-            <i id="delete-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-danger fas"> Delete</i>
+            <i id="delete-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-danger fas"><i class="fas fa-trash-alt"></i> Delete</i>
           </div>
     
         </div>`;

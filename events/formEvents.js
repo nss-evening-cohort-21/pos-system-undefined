@@ -14,7 +14,7 @@ const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     if (e.target.id.includes('submit-Order')) {
-      console.warn('why no do');
+      console.warn('submit-Order');
       const payload = {
         order_name: document.querySelector('#orderName').value,
         phone_number: document.querySelector('#customerPhone').value,

@@ -1,31 +1,43 @@
 import renderToDOM from '../../utils/renderToDOM';
-import logoutButton from '../logoutButton';
+import pizzabeat from '../../assets/pizzabeat.jpg';
 
 const navBar = () => {
-  const domString = `<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<a id="logoHomePage" class="navbar-brand" href="#"><img class="nav-logo" src="https://thumbs.dreamstime.com/b/pizza-pepperoni-cheese-salami-vegetables-58914487.jpg"></a>
+  const domString = `
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-5">
+      <div class="container-fluid">
+        <a id="logoHomePage" class="navbar-brand title" href="#"><img class="nav-logo" src=${pizzabeat} alt = "pizza beat logo"></a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#" id="viewOrders">
+              View All Orders <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="createAnOrderPage">Create an Order</a>
+            </li>
+            <li>
+              <input
+                class="form-control mr-sm-2"
+                id="search" type="search"
+                placeholder="Search Order/Item"
+                aria-label="Search"
+              />
+            </li>
+          </ul>
+          <span class="navbar-text">
+            <div id="logout"></div>
+          </span>
+        </div>
+      </div>
+    </nav>`;
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <a id="viewOrders" class="nav-link" href="#">View All Orders</a>
-    </li>
-    <li class="nav-item">
-      <a id="createAnOrderPage" class="nav-link" href="#">Create an Order</a>
-    </li>
-  </ul>
-
-  <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-  </form>
-
-  <div id="logout"></div>
-
-</div>
-</nav>`;
   renderToDOM('#navigation', domString);
-  logoutButton();
 };
 
 export default navBar;
