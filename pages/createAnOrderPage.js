@@ -1,4 +1,3 @@
-import searchOrderEvent from '../events/searchOrderEvent';
 import clearDom from '../utils/clear/clearDom';
 import renderToDOM from '../utils/renderToDOM';
 
@@ -27,6 +26,5 @@ const createAnOrderPage = (obj = {}) => {
   <button id="submitCreateOrder" type="submit" class="btn btn-primary">Create/Edit Order</button>
 </form>`;
   renderToDOM('#form-container', domstring);
-  searchOrderEvent();
 };
 export default createAnOrderPage;
