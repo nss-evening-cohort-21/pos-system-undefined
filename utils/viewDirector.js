@@ -2,7 +2,8 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import domBuilder from '../components/shared/domBuilder';
 import openingPage from '../pages/openingPage';
-import clearNavigation from './clearNavigation';
+import clearNavigation from './clear/clearNavigation';
+
 import client from './client';
 import startApp from './startApp';
 

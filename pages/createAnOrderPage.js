@@ -1,4 +1,4 @@
-import clearDom from '../utils/clearDom';
+import clearDom from '../utils/clear/clearDom';
 import renderToDOM from '../utils/renderToDOM';
 
 const createAnOrderPage = (obj = {}) => {

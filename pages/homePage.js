@@ -1,4 +1,4 @@
-import clearLoginBtn from '../utils/clearLoginBtn';
+import clearLoginBtn from '../utils/clear/clearLoginBtn';
 import renderToDOM from '../utils/renderToDOM';
 
 const homePage = (user) => {

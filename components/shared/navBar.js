@@ -1,5 +1,5 @@
 import renderToDOM from '../../utils/renderToDOM';
-import logoutButton from '../logoutButton';
+import logoutButton from '../logButtons/logoutButton';
 
 const navBar = () => {
   const domString = `<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -15,10 +15,7 @@ const navBar = () => {
       <a id="createAnOrderPage" class="nav-link" href="#">Create an Order</a>
     </li>
   </ul>
-
-  <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-  </form>
+ 
 
   <div id="logout"></div>
 
