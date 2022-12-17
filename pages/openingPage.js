@@ -1,9 +1,10 @@
 import loginButton from '../components/logButtons/loginButton';
 import renderToDOM from '../utils/renderToDOM';
+import pizzabeat from '../assets/pizzabeat.jpg';
 
 const openingPage = () => {
+  const domstring = `<img class="opening-logo" src =${pizzabeat} alt = "pizza beat logo">`;
   loginButton();
-  const domstring = '<img class="opening-logo" src ="https://thumbs.dreamstime.com/b/pizza-pepperoni-cheese-salami-vegetables-58914487.jpg">';
   renderToDOM('#store', domstring);
 };
 export default openingPage;
