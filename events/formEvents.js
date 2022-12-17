@@ -17,7 +17,7 @@ const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     if (e.target.id.includes('submit-Order')) {
-      console.warn('why no do');
+      console.warn('submit-Order');
       const payload = {
         order_name: document.querySelector('#orderName').value,
         phone_number: document.querySelector('#customerPhone').value,
@@ -96,7 +96,7 @@ const formEvents = (user) => {
       const payload = {
         order_id: orderIdentify.toString(),
         order_amt: document.querySelector('#tip-amt').valueAsNumber + sumTogether,
-        tip_amt: document.querySelector('#tip-amt').value,
+        tip_amt: document.querySelector('#tip-amt').valueAsNumber,
         payment_type: document.querySelector('#paymentDropDown').value,
         order_type: orderType.toString(),
         date: new Date().toLocaleString(),
