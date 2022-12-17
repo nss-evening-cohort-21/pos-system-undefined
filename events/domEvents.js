@@ -1,18 +1,21 @@
 // import { getItem } from '../api/itemData';
 import deleteOrderItemsRelationship from '../api/mergedData';
-import { getSingleItem } from '../api/itemData';
+import { getItem, getSingleItem } from '../api/itemData';
 import { getOrder, getSingleOrder } from '../api/orderData';
 import addPaymentPage from '../pages/addPaymentPage';
 import createAnOrderPage from '../pages/createAnOrderPage';
 import createItemPage from '../pages/createItemPage';
 // import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
 import { viewDetailsPage } from '../pages/viewDetailsPage';
-import viewOrdersPage from '../pages/viewOrdersPage';
+import { viewOrdersPage } from '../pages/viewOrdersPage';
 import viewRevenuePage from '../pages/viewRevenue';
-import clearDom from '../utils/clearDom';
-import clearStore from '../utils/clearStore';
-import clearView from '../utils/clearView';
+import clearDom from '../utils/clear/clearDom';
+import clearStore from '../utils/clear/clearStore';
+
 import getOrderByDeletedItem from '../utils/getOrderIdByDeletedItem';
+import { createSearchOrderArray } from '../utils/createArray/createSearchOrderArray';
+import { createSearchItemArray } from '../utils/createArray/createSearchItemArray';
+import clearView from '../utils/clear/clearView';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -20,6 +23,7 @@ const domEvents = (user) => {
     if (e.target.id.includes('viewOrders')) {
       console.warn('CLICKED viewOrders', e.target.id);
       getOrder(user.uid).then(viewOrdersPage);
+      getOrder(user.uid).then(createSearchOrderArray);
     }
     if (e.target.id.includes('createAnOrder')) {
       console.warn('CLICKED createAnOrder', e.target.id);
@@ -33,7 +37,7 @@ const domEvents = (user) => {
       console.warn('CLICKED details-Order-btn', e.target.id);
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then(viewDetailsPage);
-      // getItem(firebaseKey).then(itemsOnDetailsPage); redundant
+      getItem(firebaseKey).then(createSearchItemArray);
     }
     if (e.target.id.includes('addItemBtn')) {
       console.warn('CLICKED addItemBtn', e.target.id);

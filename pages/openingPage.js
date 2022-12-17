@@ -1,4 +1,4 @@
-import loginButton from '../components/loginButton';
+import loginButton from '../components/logButtons/loginButton';
 import renderToDOM from '../utils/renderToDOM';
 
 const openingPage = () => {
