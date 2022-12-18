@@ -79,11 +79,32 @@ const getRevenuePrice = () => new Promise((resolve, reject) => {
     })
     .catch(reject);
 });
+
+// GET ALL of the REVENUE API CALL
+const getAllRevenue = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/revenue.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 export {
   createRevenue,
   getRevenue,
   updateRevenue,
   deleteRevenue,
   getSingleRevenue,
-  getRevenuePrice
+  getRevenuePrice,
+  getAllRevenue
 };

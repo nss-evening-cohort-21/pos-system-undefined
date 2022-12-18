@@ -23,6 +23,7 @@ const viewRevenuePage = () => {
   </div>
   <hr>
   <p>Total Sum of Revenue for Date Range:</p>
+  <div id="revDateRangeTotal"></div>
   `;
   renderToDOM('#store', domstring);
 };
