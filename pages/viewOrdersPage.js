@@ -6,8 +6,8 @@ const viewOrdersPage = (array) => {
   clearDom();
   const searchBarString = ` <form class="form-inline my-2 my-lg-0">
    <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-   </form>`;
-  const filterOrders = `<div class="dropdown">
+   </form>
+   <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     View Orders By:
   </button>
@@ -39,7 +39,6 @@ const viewOrdersPage = (array) => {
         </div>`;
   });
   renderToDOM('#form-container', searchBarString);
-  renderToDOM('#filter-container', filterOrders);
   renderToDOM('#store', domString);
   searchOrderEvent();
 };
