@@ -68,6 +68,10 @@ const domEvents = (user) => {
         getOrderByDeletedItem(firebaseKey);
       }
     }
+    // FILTER BY ALL ORDERS
+    if (e.target.id.includes('allOrders')) {
+      getOrder(user.uid).then(viewOrdersPage);
+    }
     // FILTER BY OPEN ORDERS
     if (e.target.id.includes('openOrders')) {
       getOrder(user.uid).then((arr) => {
