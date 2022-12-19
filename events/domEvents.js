@@ -17,13 +17,14 @@ import { createSearchOrderArray } from '../utils/createArray/createSearchOrderAr
 import { createSearchItemArray } from '../utils/createArray/createSearchItemArray';
 import clearView from '../utils/clear/clearView';
 import renderToDOM from '../utils/renderToDOM';
+import sortOrders from '../utils/sortOrders';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     // click event to view all orders
     if (e.target.id.includes('viewOrders')) {
       console.warn('CLICKED viewOrders', e.target.id);
-      getOrder(user.uid).then(viewOrdersPage);
+      getOrder(user.uid).then(sortOrders);
       getOrder(user.uid).then(createSearchOrderArray);
     }
     if (e.target.id.includes('createAnOrder')) {
@@ -70,7 +71,7 @@ const domEvents = (user) => {
     }
     // FILTER BY ALL ORDERS
     if (e.target.id.includes('allOrders')) {
-      getOrder(user.uid).then(viewOrdersPage);
+      getOrder(user.uid).then(sortOrders);
     }
     // FILTER BY OPEN ORDERS
     if (e.target.id.includes('openOrders')) {
