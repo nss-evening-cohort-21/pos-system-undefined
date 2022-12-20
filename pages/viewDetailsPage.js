@@ -22,8 +22,10 @@ const viewDetailsPage = (order) => {
     <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search by Item Name or Price" aria-label="Search">
   </form>
   <h1>This is the  ${order.order_name} order</h1>
-  <button id="addItemBtn" class="btn btn-secondary">Add Item <i class="fa-light fas fa-plus"></i></button>
-  <button id="addPaymentBtn" class="btn btn-success">Add Payment <i class="fa-thin fas fa-dollar-sign"></i></button>
+
+  ${order.is_open === true ? `<button id="addItemBtn" class="btn btn-secondary">Add Item <i class="fa-light fas fa-plus"></i></button>
+  <button id="addPaymentBtn" class="btn btn-success">Add Payment <i class="fa-thin fas fa-dollar-sign"></i></button>` : ''}
+
   <div id="orderTotal">
     <h3>Order Total</h3>
     <p class="dollarSign">$</p>
@@ -32,7 +34,9 @@ const viewDetailsPage = (order) => {
   `;
 
   renderToDOM('#form-container', domstring);
-  getItem(orderIdentify).then(itemsOnDetailsPage);
+  getItem(orderIdentify).then((arr) => {
+    itemsOnDetailsPage(order, arr);
+  });
   searchItemEvent();
 };
 
