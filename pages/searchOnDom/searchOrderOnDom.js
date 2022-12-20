@@ -17,9 +17,9 @@ const searchOrderOnDom = (arr) => {
     <p>${item.is_phone === true ? 'Phone Order' : 'In Person'}</p>
     <p>${item.is_open === true ? 'order open' : 'order closed'}</p>
       
-      ${item.is_open === true ? `<i id="edit-Order-btn--${item.firebaseKey}" class="logout-btn fas  btn btn-info">Edit</i>` : ''}
-      ${item.is_open === true ? `<i id="details-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-success fas">View Details</i>` : ''}
-      ${item.is_open === true ? `<i id="delete-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-danger fas">Delete</i>` : ''}
+    ${item.is_open === true ? `<i id="edit-Order-btn--${item.firebaseKey}" class="logout-btn fas  btn btn-info"><i class="fas fa-edit"></i> Edit</i>` : ''}
+    ${item.is_open === true ? `<i id="details-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-success fas"><i class="fas fa-eye"></i> View Details</i>` : ''}
+    ${item.is_open === true ? `<i id="delete-Order-btn--${item.firebaseKey}" class="logout-btn btn btn-danger fas"><i class="fas fa-trash-alt"></i> Delete</i>` : ''}
 
 
   </div>`;
