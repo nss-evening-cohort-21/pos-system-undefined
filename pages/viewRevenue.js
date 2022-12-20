@@ -2,10 +2,9 @@ import { getRevenuePrice } from '../api/revenueData';
 import clearDom from '../utils/clear/clearDom';
 import renderToDOM from '../utils/renderToDOM';
 import { revCalculator } from '../utils/Calculators/revenueCalculator';
-import { orderIdentify } from './viewDetailsPage';
 
 const viewRevenuePage = () => {
-  getRevenuePrice(orderIdentify).then((rev) => revCalculator(rev));
+  getRevenuePrice().then((rev) => revCalculator(rev));
   clearDom();
   const domstring = `
   <h1>Revenue</h1> <i class="fa-solid fa-wave-pulse"></i>

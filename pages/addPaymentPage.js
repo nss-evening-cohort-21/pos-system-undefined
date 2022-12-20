@@ -17,7 +17,7 @@ const addPaymentPage = () => {
 </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Tip Amount</label>
-    <input type="number" class="form-control" id="tip-amt" placeholder="">
+    <input type="number" min="0.00" max="9999999" step="0.01" class="form-control" id="tip-amt" placeholder="Please Enter Customer Tip">
   </div>
   <button type="submit" class="btn btn-primary">Close Order</button>
 </form>`;

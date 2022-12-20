@@ -16,10 +16,10 @@ const searchItemOnDom = (arr) => {
       <p>Price:$ ${item.price}</p>
     
       
-      <i id="edit-Item-btn--${item.firebaseKey}" class="logout-btn fas  btn btn-info">Edit</i>
+      <i id="edit-Item-btn--${item.firebaseKey}" class="logout-btn fas  btn btn-info"><i class="fas fa-edit"></i> Edit</i>
 
-      
-      <i id="delete-Item-btn--${item.firebaseKey}" class="logout-btn btn btn-danger fas"> Delete</i>
+            
+            <i id="delete-Item-btn--${item.firebaseKey}" class="logout-btn btn btn-danger fas"><i class="fas fa-trash-alt"></i> Delete</i>
     </div>
 
   </div>`;

@@ -19,7 +19,7 @@ const viewDetailsPage = (order) => {
 
   const domstring = `
   <form class="form-inline my-2 my-lg-0">
-    <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search by Item Name or Price" aria-label="Search">
   </form>
   <h1>This is the  ${order.order_name} order</h1>
   <button id="addItemBtn" class="btn btn-secondary">Add Item <i class="fa-light fas fa-plus"></i></button>

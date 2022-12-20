@@ -7,7 +7,6 @@ import createAnOrderPage from '../pages/createAnOrderPage';
 import createItemPage from '../pages/createItemPage';
 // import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
 import { viewDetailsPage } from '../pages/viewDetailsPage';
-import { viewOrdersPage } from '../pages/viewOrdersPage';
 import viewRevenuePage from '../pages/viewRevenue';
 import clearDom from '../utils/clear/clearDom';
 import clearStore from '../utils/clear/clearStore';
@@ -53,7 +52,6 @@ const domEvents = (user) => {
     if (e.target.id.includes('edit-Order-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then((order) => createAnOrderPage(order));
-      // getSingleBook(firebaseKey).then(addBookForm); // using the callback method
     }
     if (e.target.id.includes('edit-Item-btn')) {
       clearView();
@@ -61,7 +59,6 @@ const domEvents = (user) => {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleItem(firebaseKey).then((item) => createItemPage(item));
     }
-    // getSingleBook(firebaseKey).then(addBookForm); // using the callback method
     if (e.target.id.includes('delete-Item-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       // eslint-disable-next-line no-alert
@@ -137,7 +134,8 @@ const domEvents = (user) => {
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteOrderItemsRelationship(firebaseKey).then(() => {
-          getOrder(user.uid).then(viewOrdersPage);
+          getOrder(user.uid).then(createSearchOrderArray);
+          getOrder(user.uid).then(sortOrders);
         });
       }
     }

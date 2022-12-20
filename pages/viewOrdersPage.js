@@ -5,7 +5,7 @@ import renderToDOM from '../utils/renderToDOM';
 const viewOrdersPage = (array) => {
   clearDom();
   const searchBarString = ` <form class="form-inline my-2 my-lg-0">
-   <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+   <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search by Name, Phone, Email, or Date" aria-label="Search">
    </form>
    <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

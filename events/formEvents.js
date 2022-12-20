@@ -5,13 +5,13 @@ import {
 import { createRevenue, getRevenue } from '../api/revenueData';
 import itemsOnDetailsPage from '../pages/itemsOnDetailsPage';
 import { viewDetailsPage, orderIdentify, orderType } from '../pages/viewDetailsPage';
-import { viewOrdersPage } from '../pages/viewOrdersPage';
 import viewRevenuePage from '../pages/viewRevenue';
 import clearFormContainer from '../utils/clear/clearFormContainer';
 
 import { sumTogether } from '../utils/Calculators/itemCalculator';
-import { orderArray } from '../utils/createArray/createSearchOrderArray';
-import { itemArray } from '../utils/createArray/createSearchItemArray';
+import { createSearchOrderArray, orderArray } from '../utils/createArray/createSearchOrderArray';
+import { createSearchItemArray, itemArray } from '../utils/createArray/createSearchItemArray';
+import sortOrders from '../utils/sortOrders';
 
 const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
@@ -32,7 +32,8 @@ const formEvents = (user) => {
       createOrder(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateOrder(patchPayload).then(() => {
-          getOrder(user.uid).then(viewOrdersPage);
+          getOrder(user.uid).then(sortOrders);
+          getOrder(user.uid).then(createSearchOrderArray);
         });
       });
     }
@@ -50,6 +51,7 @@ const formEvents = (user) => {
         const patchPayload = { firebaseKey: name };
 
         updateItem(patchPayload).then(() => {
+          getItem(orderIdentify).then(createSearchItemArray);
           getSingleOrder(orderIdentify).then(viewDetailsPage);
           getItem(orderIdentify).then(itemsOnDetailsPage);
         });
@@ -57,7 +59,6 @@ const formEvents = (user) => {
     }
     if (e.target.id.includes('update-Order')) {
       const [, firebaseKey] = e.target.id.split('--');
-      // console.warn('CLICKED UPDATE BOOK', e.target.id);
 
       const payload = {
         order_name: document.querySelector('#orderName').value,
@@ -70,12 +71,12 @@ const formEvents = (user) => {
         firebaseKey
       };
       updateOrder(payload).then(() => {
-        getOrder(user.uid).then(viewOrdersPage);
+        getOrder(user.uid).then(createSearchOrderArray);
+        getOrder(user.uid).then(sortOrders);
       });
     }
     if (e.target.id.includes('update-Item')) {
       const [, firebaseKey] = e.target.id.split('--');
-      // console.warn('CLICKED UPDATE BOOK', e.target.id);
 
       const payload = {
         order_id: orderIdentify.toString(),
@@ -85,6 +86,7 @@ const formEvents = (user) => {
         firebaseKey
       };
       updateItem(payload).then(() => {
+        getItem(orderIdentify).then(createSearchItemArray);
         getItem(orderIdentify).then(itemsOnDetailsPage);
         clearFormContainer();
         getSingleOrder(orderIdentify).then(viewDetailsPage);
