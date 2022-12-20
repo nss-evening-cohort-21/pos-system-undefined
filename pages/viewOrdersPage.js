@@ -6,7 +6,17 @@ const viewOrdersPage = (array) => {
   clearDom();
   const searchBarString = ` <form class="form-inline my-2 my-lg-0">
    <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-   </form>`;
+   </form>
+   <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    View Orders By:
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" id="allOrders">All Orders</a></li>
+    <li><a class="dropdown-item" id="openOrders">Open Orders</a></li>
+    <li><a class="dropdown-item" id="closedOrders">Closed Orders</a></li>
+  </ul>
+</div>`;
 
   let domString = '';
   array.forEach((item) => {
