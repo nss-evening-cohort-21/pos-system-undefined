@@ -8,7 +8,7 @@ const createItemPage = (obj = {}) => {
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Price</label>
-    <input type="number" class="form-control" id="price" placeholder="" value="${obj.price || ''}">
+    <input type="number" min="0.00" max="9999999" step="0.01" class="form-control" id="price" placeholder="" value="${obj.price || ''}">
   </div>
   <button type="submit" class="btn btn-primary">Add/Edit</button>
 </form>`;
