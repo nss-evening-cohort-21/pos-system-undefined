@@ -66,6 +66,22 @@ const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// GET OURDER BY CLOSED IS CLOSED
+// const getItemPrice = (orderIdentify) => new Promise((resolve, reject) => {
+//   fetch(`${endpoint}/item.json?orderBy="order_id"&equalTo="${orderIdentify}"`, {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const itemPrice = Object.values(data).filter((item) => item.price);
+//       resolve(itemPrice);
+//     })
+//     .catch(reject);
+// });
+
 export {
   createOrder,
   getOrder,
