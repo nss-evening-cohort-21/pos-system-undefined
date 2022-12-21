@@ -1,4 +1,6 @@
+import { getSingleOrder } from '../api/orderData';
 import searchOrderOnDom from '../pages/searchOnDom/searchOrderOnDom';
+import { orderIdentify } from '../pages/viewDetailsPage';
 // import clearView from '../utils/clear/clearView';
 import { orderArray } from '../utils/createArray/createSearchOrderArray';
 
@@ -12,7 +14,9 @@ const searchOrderEvent = () => {
     || taco.phone_number.toLowerCase().includes(searchValue)
     || taco.email.toLowerCase().includes(searchValue)
     || taco.date.toLowerCase().includes(searchValue));
-    searchOrderOnDom(searchResult);
+    getSingleOrder(orderIdentify).then((order) => {
+      searchOrderOnDom(order, searchResult);
+    });
     // clearView();
   });
 };
