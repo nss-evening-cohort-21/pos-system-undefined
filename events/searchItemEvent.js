@@ -1,4 +1,6 @@
 import searchItemOnDom from '../pages/searchOnDom/searchItemOnDom';
+// eslint-disable-next-line import/no-cycle
+import { orderIdentify } from '../pages/viewDetailsPage';
 import { itemArray } from '../utils/createArray/createSearchItemArray';
 
 const searchItemEvent = () => {
@@ -9,7 +11,8 @@ const searchItemEvent = () => {
     // eslint-disable-next-line arrow-parens
     const searchResult = itemArray.filter(taco => taco.name.toLowerCase().includes(searchValue)
     || taco.price.toLowerCase().includes(searchValue));
-    searchItemOnDom(searchResult);
+    searchItemOnDom(orderIdentify, searchResult);
   });
 };
+
 export default searchItemEvent;

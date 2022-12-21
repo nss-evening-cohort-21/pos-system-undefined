@@ -1,4 +1,5 @@
 import { getItem, getItemPrice } from '../api/itemData';
+// eslint-disable-next-line import/no-cycle
 import searchItemEvent from '../events/searchItemEvent';
 import clearDom from '../utils/clear/clearDom';
 import { itemsCalculator } from '../utils/Calculators/itemCalculator';
@@ -9,6 +10,7 @@ import itemsOnDetailsPage from './itemsOnDetailsPage';
 let orderIdentify = '';
 // eslint-disable-next-line import/no-mutable-exports
 let orderType = '';
+
 const viewDetailsPage = (order) => {
   console.warn('order', order);
   orderIdentify = order.firebaseKey;
