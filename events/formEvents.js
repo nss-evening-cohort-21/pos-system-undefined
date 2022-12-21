@@ -52,8 +52,12 @@ const formEvents = (user) => {
 
         updateItem(patchPayload).then(() => {
           getItem(orderIdentify).then(createSearchItemArray);
-          getSingleOrder(orderIdentify).then(viewDetailsPage);
-          getItem(orderIdentify).then(itemsOnDetailsPage);
+          getSingleOrder(orderIdentify).then((order) => {
+            viewDetailsPage(order);
+            getItem(orderIdentify).then((arr) => {
+              itemsOnDetailsPage(order, arr);
+            });
+          });
         });
       });
     }
@@ -87,9 +91,13 @@ const formEvents = (user) => {
       };
       updateItem(payload).then(() => {
         getItem(orderIdentify).then(createSearchItemArray);
-        getItem(orderIdentify).then(itemsOnDetailsPage);
         clearFormContainer();
-        getSingleOrder(orderIdentify).then(viewDetailsPage);
+        getSingleOrder(orderIdentify).then((order) => {
+          viewDetailsPage(order);
+          getItem(orderIdentify).then((arr) => {
+            itemsOnDetailsPage(order, arr);
+          });
+        });
       });
     }
     if (e.target.id.includes('submit-revenue')) {
