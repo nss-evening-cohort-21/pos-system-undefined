@@ -23,7 +23,7 @@ const datePick = () => {
           console.warn('revenue', revenue);
           const orderdate = rev.date;
           console.warn('orderdate', orderdate);
-          if (new Date(orderdate).getTime() >= startDateTimeStamp && new Date(orderdate).getTime() <= (endDateTimeStamp + 86400000)) {
+          if (new Date(orderdate).getTime() >= startDateTimeStamp && new Date(orderdate).getTime() <= (endDateTimeStamp + 864000000)) {
             totalOrder += rev.order_amt;
           }
           renderToDOM('#revDateRangeTotal', totalOrder);

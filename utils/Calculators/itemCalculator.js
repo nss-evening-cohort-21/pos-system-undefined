@@ -16,7 +16,7 @@ const itemsCalculator = (array) => {
     initialValue
   );
   console.warn('sumTogether', sumTogether);
-  renderToDOM('#itemTotal', sumTogether);
+  renderToDOM('#itemTotal', sumTogether.toFixed(2));
 };
 
 export { itemsCalculator, sumTogether };

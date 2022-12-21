@@ -12,7 +12,7 @@ const revCalculator = (array) => {
     (accumulator, currentValue) => accumulator + currentValue,
     initialValue
   );
-  renderToDOM('#revTotal', sumRevTogether);
+  renderToDOM('#revTotal', sumRevTogether.toFixed(2));
 };
 
 export { revCalculator, sumRevTogether };
