@@ -1,3 +1,4 @@
+import { getSingleOrder } from '../api/orderData';
 import searchItemOnDom from '../pages/searchOnDom/searchItemOnDom';
 // eslint-disable-next-line import/no-cycle
 import { orderIdentify } from '../pages/viewDetailsPage';
@@ -11,7 +12,9 @@ const searchItemEvent = () => {
     // eslint-disable-next-line arrow-parens
     const searchResult = itemArray.filter(taco => taco.name.toLowerCase().includes(searchValue)
     || taco.price.toLowerCase().includes(searchValue));
-    searchItemOnDom(orderIdentify, searchResult);
+    getSingleOrder(orderIdentify).then((order) => {
+      searchItemOnDom(order, searchResult);
+    });
   });
 };
 
