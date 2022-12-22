@@ -12,7 +12,9 @@ const revCalculator = (array) => {
     (accumulator, currentValue) => accumulator + currentValue,
     initialValue
   );
-  renderToDOM('#revTotal', sumRevTogether);
+  // eslint-disable-next-line prefer-const
+  let sumRevTogetherDec = sumRevTogether.toFixed(2);
+  renderToDOM('#revTotal', sumRevTogetherDec);
 };
 
 export { revCalculator, sumRevTogether };
